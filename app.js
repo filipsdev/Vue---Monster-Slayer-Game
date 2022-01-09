@@ -10,13 +10,23 @@ const app = Vue.createApp({
             monsterHealth: 100,
         };
     },
+    computed: {
+        monsterBarLevel() {
+            return { width: this.monsterHealth + '%' };
+        },
+        playerBarLevel() {
+            return { width: this.playerHealth + '%' };
+        }
+    },
     methods: {
         attachTheMonster() {
-            this.monsterHealth -= getRandomValue(5, 15);
+            const attackDamage = getRandomValue(5, 15);
+            this.monsterHealth -= attackDamage;
             this.attachThePlayer();
         },
         attachThePlayer() {
-            this.playerHealth -= getRandomValue(5, 18);
+            const attackDamage = getRandomValue(8, 18);
+            this.playerHealth -= attackDamage;
         }
     }
 });
