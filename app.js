@@ -1,6 +1,6 @@
 // Calculate random number between two numbers
 function getRandomValue(min, max) {
-    return Math.floor((Math.random() * (max - min))) + 5;
+    return Math.floor((Math.random() * (max - min))) + min;
 }
 
 const app = Vue.createApp({
@@ -13,6 +13,7 @@ const app = Vue.createApp({
     methods: {
         attachTheMonster() {
             this.monsterHealth -= getRandomValue(5, 15);
+            this.attachThePlayer();
         },
         attachThePlayer() {
             this.playerHealth -= getRandomValue(5, 18);
