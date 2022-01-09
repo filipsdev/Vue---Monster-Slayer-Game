@@ -127,3 +127,14 @@ footer {
     color: white;
     text-align: center;
 }
+
+a,
+a:active,
+a:visited {
+    color: white;
+}
+
+a,
+a:hover {
+    color: blue;
+}
